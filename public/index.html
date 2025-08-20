@@ -2,276 +2,312 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Mavlers - AI Solutions Agency</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Full Service Digital Marketing Outsourcing Agency - Mavlers</title>
   <style>
-    /* Reset & basics */
+    /* Existing styles here (omitted for brevity, use your provided CSS) */
+    /* ... Your full CSS from your original file ... */
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #1a1a1a;
-      background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      overflow-x: hidden;
     }
 
-    /* Container */
     .container {
-      width: 90%;
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top Banner */
+    .top-banner {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 12px 0;
+      font-size: 14px;
+    }
+
+    .top-banner a {
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: 600;
     }
 
     /* Header */
-    header {
-      padding: 16px 0;
-      background: rgba(255 255 255 / 0.1);
-      backdrop-filter: saturate(180%) blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 99;
-    }
-    header .nav-brand {
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: #fff;
-      letter-spacing: 2px;
-      font-family: 'Segoe UI Black', sans-serif;
-    }
-
-    /* Hero */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 120px 20px 80px;
-      color: white;
-    }
-    .hero h1 {
-      font-size: 3.4rem;
-      margin-bottom: 20px;
-      max-width: 800px;
-      line-height: 1.1;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 560px;
-      margin: 0 auto 40px;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.3);
-      color: #dbe9ff;
-    }
-    .hero button {
-      background-color: #ffc107;
-      border: none;
-      color: #1a1a1a;
-      font-size: 1.2rem;
-      padding: 16px 48px;
-      border-radius: 30px;
-      cursor: pointer;
-      font-weight: 700;
-      box-shadow: 0 8px 15px rgba(255, 193, 7, 0.4);
-      transition: background 0.3s ease;
-    }
-    .hero button:hover {
-      background-color: #f9a825;
-      box-shadow: 0 6px 20px rgba(249, 168, 37, 0.6);
-    }
-    .hero .msg {
-      margin-top: 20px;
-      color: #f3e5ab;
-      font-weight: 600;
-      min-height: 24px;
-      font-style: italic;
-    }
-
-    /* Features */
-    .features {
-      padding: 60px 20px;
-      background: #f3f6f9;
-      color: #222;
-      text-align: center;
-    }
-    .features h2 {
-      font-size: 2.4rem;
-      margin-bottom: 40px;
-      font-weight: 700;
-      color: #333;
-    }
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 32px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .feature-item {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgb(0 0 0 / 0.07);
-      padding: 24px;
-      font-weight: 600;
-    }
-
-    /* About */
-    .about {
-      padding: 80px 20px;
-      max-width: 960px;
-      margin: 0 auto;
-      text-align: center;
-      color: #f5f5f5;
-    }
-    .about h2 {
-      font-size: 2.8rem;
-      margin-bottom: 24px;
-    }
-    .about p {
-      font-size: 1.15rem;
-      color: #ddd;
-      line-height: 1.6;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    /* Testimonials */
-    .testimonials {
-      padding: 80px 20px;
+    .header {
       background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .logo::after {
+      content: "▲";
+      margin-left: 5px;
+      transform: rotate(45deg);
+      color: #000;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
       color: #333;
-      max-width: 900px;
-      margin: 0 auto;
-      border-radius: 12px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-      text-align: center;
+      font-weight: 500;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
     }
-    .testimonials h2 {
-      font-size: 2.4rem;
-      margin-bottom: 32px;
+
+    .nav-links a:hover {
+      color: #FFD700;
+    }
+
+    .nav-links .dropdown::after {
+      content: "▼";
+      font-size: 10px;
+      margin-left: 5px;
+    }
+
+    .cta-btn {
+      background: #FFD700;
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: #FFC700;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: #fff;
+      padding: 120px 0 80px;
+      display: flex;
+      align-items: center;
+      min-height: 70vh;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text {
+      position: relative;
+    }
+
+    .hero-text::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 0;
+      width: 4px;
+      height: 60px;
+      background: #FFD700;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
       font-weight: 700;
+      color: #000;
+      line-height: 1.2;
     }
-    .testimonial {
-      font-style: italic;
+
+    .hero p {
       font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-      color: #555;
-    }
-    .testimonial-author {
-      font-weight: 700;
-      color: #222;
-      margin-top: 8px;
+      margin-bottom: 1.5rem;
+      color: #666;
+      line-height: 1.8;
     }
 
-    /* Footer */
-    footer {
-      margin-top: auto;
-      background: rgba(255 255 255 / 0.1);
-      backdrop-filter: saturate(180%) blur(10px);
-      padding: 20px 0;
-      text-align: center;
-      color: #eee;
-      font-size: 0.85rem;
-      letter-spacing: 1.2px;
+    .hero-cta {
+      margin-bottom: 2rem;
     }
 
-    @media only screen and (max-width: 600px) {
-      .hero h1 {
-        font-size: 2.4rem;
-      }
-      .features {
-        padding: 40px 20px;
-      }
-      .about {
-        padding: 60px 20px;
-      }
-      .testimonials {
-        padding: 60px 20px;
-      }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
     }
+
+    .btn-primary {
+      background: #FFD700;
+      color: #000;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #000;
+      padding: 1rem 2rem;
+      border: 2px solid #FFD700;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .hero-shape {
+      position: absolute;
+      right: -50px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(45deg, #FFD700, transparent);
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
+      opacity: 0.3;
+    }
+
+    /* Additional styles omitted for brevity */
+
   </style>
 </head>
 <body>
-  <header class="container">
-    <div class="nav-brand">Mavlers</div>
+  <!-- Top Banner -->
+  <div class="top-banner">
+    Got an Email Template, Landing page, or Banner requirement? Head to <a href="#contact">Email Mavlers</a>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">Mavlers</div>
+        <ul class="nav-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services" class="dropdown">Services</a></li>
+          <li><a href="#agencies">For Agencies</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#work" class="dropdown">Work</a></li>
+          <li><a href="#resources" class="dropdown">Resources</a></li>
+        </ul>
+        <a href="#contact" class="cta-btn">Contact us</a>
+        <button class="mobile-menu">☰</button>
+      </nav>
+    </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>Empowering Businesses with Intelligent Automation</h1>
-    <p>Boost productivity, improve workflows, and grow your brand with Mavlers AI solutions.</p>
-    <button id="workBtn">Work with Mavlers</button>
-    <div class="msg" id="message"></div>
-  </section>
-
-  <section class="features">
-    <h2>What We Offer</h2>
-    <div class="feature-list">
-      <div class="feature-item">AI-Powered Workflow Automation</div>
-      <div class="feature-item">Custom Chatbots & Virtual Assistants</div>
-      <div class="feature-item">Real-Time Data Analysis</div>
-      <div class="feature-item">API Integrations</div>
-      <div class="feature-item">Personal Branding Growth</div>
-      <div class="feature-item">Meeting Transcription Services</div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Empower your marketing with the most reliable outsourcing partner</h1>
+          <p>Struggling with execution hurdles and limited resources? Smart agencies and brands trust Mavlers' outsourced digital marketing services to execute SEO, Web, Email Marketing, Automation, & more.</p>
+          <div class="hero-cta">
+            <p><strong>Want to assess your readiness for outsourcing? Take our quick assessment quiz.</strong></p>
+          </div>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn-primary">Schedule a Call</a>
+            <a href="#quiz" class="btn-secondary">Take Outsourcing Quiz</a>
+            <button id="workBtn" class="btn-primary">Work with Mavlers</button>
+          </div>
+          <div id="workMsg" style="margin-top: 12px; font-style: italic; color: #e67e22; min-height: 20px;"></div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Professional team working" />
+          <div class="hero-shape"></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="about">
-    <h2>About Mavlers</h2>
-    <p>
-      Mavlers is an AI automation agency dedicated to delivering tailored software solutions 
-      that streamline business operations and drive growth. Our expert team leverages cutting-edge 
-      technology to empower your brand with advanced AI capabilities.
-    </p>
-  </section>
-
-  <section class="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="testimonial">
-      "Mavlers transformed how we handle client interactions. Their chatbot solutions are intuitive and efficient."
-      <div class="testimonial-author">— Priya S.</div>
-    </div>
-    <div class="testimonial">
-      "Thanks to Mavlers, our meeting transcriptions save us hours of manual work every week."
-      <div class="testimonial-author">— Arun K.</div>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Mavlers. All rights reserved.
-  </footer>
+  <!-- Add your other sections here (stats, challenges, benefits, etc.) -->
 
   <script>
-    const btn = document.getElementById('workBtn');
-    const message = document.getElementById('message');
+    const workBtn = document.getElementById('workBtn');
+    const workMsg = document.getElementById('workMsg');
 
-    btn.onclick = async () => {
-      message.textContent = '';
-      btn.disabled = true;
-      btn.textContent = 'Processing...';
+    workBtn.addEventListener('click', async () => {
+      workMsg.textContent = '';
+      workBtn.disabled = true;
+      workBtn.textContent = 'Processing...';
 
       try {
         const res = await fetch('/api/identify', { method: 'POST' });
         if (res.ok) {
-          message.textContent = 'Thank you! We\'ve received your interest.';
+          workMsg.textContent = 'Thank you! Your details have been received.';
         } else {
-          message.textContent = 'Something went wrong. Please try again.';
+          workMsg.textContent = 'Oops! Something went wrong, please try again.';
         }
-      } catch {
-        message.textContent = 'Something went wrong. Please try again.';
+      } catch (error) {
+        workMsg.textContent = 'Network error. Please try again later.';
       }
 
-      btn.disabled = false;
-      btn.textContent = 'Work with Mavlers';
-    };
+      workBtn.disabled = false;
+      workBtn.textContent = 'Work with Mavlers';
+    });
+
+    // Your existing scripts related to navigation, scroll reveal, etc.
   </script>
 </body>
 </html>
