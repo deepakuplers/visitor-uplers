@@ -2,40 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Visitor Identification Demo</title>
+  <title>Mavlers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { font-family: Segoe UI, Arial, sans-serif; background:#f5f7fa; margin:2rem; color:#222; }
-    h1 { color:#0275d8; text-align:center; }
-    button { background:#0275d8; color:#fff; padding:12px 24px; border-radius:6px; border:none; margin:0 auto 1rem; display:block; cursor:pointer; }
-    button:hover { background:#025aa5;}
-    pre { background:white; border:1px solid #ddd; border-radius:6px; padding:1rem; max-height:350px; overflow-y:auto;}
-    .loading { text-align:center; color:#888; font-style:italic;}
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(120deg, #3f5efb 0%, #fc466b 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: rgba(255,255,255,0.09);
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(30,60,123,0.2);
+      padding: 44px 36px;
+      text-align: center;
+      min-width: 320px;
+    }
+    h1 {
+      margin-bottom: 28px;
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #fff;
+      text-shadow: 1px 2px 12px rgba(30,60,123,0.1);
+    }
+    button {
+      background-color: #fc466b;
+      color: #fff;
+      border: none;
+      border-radius: 26px;
+      font-size: 1.3rem;
+      padding: 14px 36px;
+      cursor: pointer;
+      transition: background 0.2s;
+      box-shadow: 0 2px 16px rgba(252,70,107,0.2);
+    }
+    button:hover {
+      background: #3f5efb;
+    }
+    .message {
+      margin-top: 24px;
+      font-size: 1.05rem;
+      color: #fffbe0;
+      min-height: 24px;
+      font-style: italic;
+      letter-spacing: 1px;
+    }
   </style>
 </head>
 <body>
-  <h1>Visitor Identification Demo</h1>
-  <button id="checkVisitorBtn">Identify Visitor</button>
-  <pre id="output">Click "Identify Visitor" to see your profile...</pre>
-  <div class="loading" id="loading" style="display:none;">Loading...</div>
-<script>
-const btn = document.getElementById('checkVisitorBtn');
-const output = document.getElementById('output');
-const loading = document.getElementById('loading');
+  <div class="container">
+    <h1>Mavlers</h1>
+    <button id="workBtn">Work with Mavlers</button>
+    <div class="message" id="message"></div>
+  </div>
+  <script>
+    const btn = document.getElementById('workBtn');
+    const message = document.getElementById('message');
 
-btn.onclick = async () => {
-  output.textContent = '';
-  loading.style.display = 'block';
-  try {
-    await fetch('/api/identify');
-    loading.style.display = 'none';
-    output.textContent = 'Visitor info sent successfully!';
-  } catch (e) {
-    loading.style.display = 'none';
-    output.textContent = 'Error: ' + e.message;
-  }
-};
-
-</script>
+    btn.onclick = async () => {
+      message.textContent = '';
+      btn.disabled = true;
+      btn.textContent = 'Processing...';
+      try {
+        const res = await fetch('/api/identify', { method: 'POST' });
+        if (res.ok) {
+          message.textContent = 'Thank you! We\'ve received your interest.';
+        } else {
+          message.textContent = 'Something went wrong. Please try again.';
+        }
+      } catch {
+        message.textContent = 'Something went wrong. Please try again.';
+      }
+      btn.disabled = false;
+      btn.textContent = 'Work with Mavlers';
+    };
+  </script>
 </body>
 </html>
