@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mavlers - Schedule a Call</title>
+  <title>Mavlers</title>
   <style>
     /* Reset */
     * {
@@ -11,89 +11,80 @@
       padding: 0;
       box-sizing: border-box;
     }
-    body, html {
+    html, body {
       height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: #fff;
+      background-color: #f9fafb;
+      color: #111;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 20px;
     }
-    .wrapper {
+    .container {
       max-width: 420px;
       width: 100%;
-      background: rgba(255 255 255 / 0.1);
+      background: white;
       padding: 40px 30px;
-      border-radius: 14px;
-      box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.12);
     }
     h1 {
       font-weight: 700;
-      font-size: 1.9rem;
-      margin-bottom: 16px;
-      text-shadow: 1px 3px 6px rgba(0,0,0,0.5);
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1.5px;
+      color: #212529;
     }
-    p {
-      margin-bottom: 32px;
-      font-size: 1.05rem;
+    .tagline {
+      font-weight: 400;
+      color: #6c757d;
+      margin-bottom: 2.5rem;
+      font-size: 1.1rem;
       line-height: 1.5;
-      color: #cce4ff;
-      text-shadow: 0 1px 6px rgba(0,0,0,0.3);
     }
     button {
-      background: #ffc107;
-      color: #222;
-      padding: 14px 28px;
+      background-color: #023e8a;
+      color: white;
+      font-weight: 600;
       font-size: 1.1rem;
-      font-weight: 700;
+      padding: 1rem 2rem;
       border: none;
-      border-radius: 35px;
-      width: 100%;
+      border-radius: 40px;
       cursor: pointer;
-      box-shadow: 0 8px 22px rgba(255,193,7,0.5);
+      width: 100%;
       transition: background-color 0.3s ease;
+      box-shadow: 0 6px 15px rgb(2 62 138 / 0.5);
     }
     button:hover:not(:disabled) {
-      background: #ffa000;
-      box-shadow: 0 10px 30px rgba(255,160,0,0.7);
+      background-color: #012a5a;
+      box-shadow: 0 8px 22px rgb(1 42 90 / 0.7);
     }
     button:disabled {
-      opacity: 0.6;
+      background-color: #555;
       cursor: not-allowed;
       box-shadow: none;
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <h1>Empower Your Marketing</h1>
-    <p>Get reliable, outsourced digital marketing services from Mavlers to boost SEO, email marketing, automation, and more.</p>
-    <button id="scheduleCallBtn">Schedule a Call</button>
+  <div class="container" role="main">
+    <h1>Mavlers</h1>
+    <p class="tagline">Professional digital marketing outsourcing, automation, and growth solutions crafted for your success.</p>
+    <button id="scheduleCallBtn" aria-label="Schedule a call with Mavlers">Schedule a Call</button>
   </div>
 
   <script>
     const btn = document.getElementById('scheduleCallBtn');
-    btn.addEventListener('click', async () => {
-      btn.disabled = true;
-      btn.textContent = 'Preparing your meeting...';
 
-      try {
-        const res = await fetch('/api/identify', { method: 'POST' });
-        if (res.ok) {
-          window.location.href = '/schedule.html';
-        } else {
-          alert('Oops! Something went wrong, please try again.');
-          btn.disabled = false;
-          btn.textContent = 'Schedule a Call';
-        }
-      } catch (error) {
-        alert('Network error. Please try again later.');
-        btn.disabled = false;
-        btn.textContent = 'Schedule a Call';
-      }
+    btn.addEventListener('click', () => {
+      // Send visitor data, but do not wait for response before redirect
+      fetch('/api/identify', { method: 'POST' })
+        .catch(() => { /* Fail silently */ });
+
+      // Immediately redirect
+      window.location.href = '/schedule.html';
     });
   </script>
 </body>
