@@ -7,8 +7,7 @@
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: #1e3c72;
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
       color: white;
       margin: 0;
       display: flex;
@@ -22,7 +21,7 @@
       max-width: 600px;
       background: rgba(255 255 255 / 0.1);
       padding: 40px 30px;
-      border-radius: 12px;
+      border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     }
     h1 {
@@ -42,18 +41,14 @@
       height: 630px;
     }
   </style>
-  <!-- Add Calendly widget script -->
+  <!-- Calendly Widget -->
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
   <div class="container">
     <h1>Schedule Your Call</h1>
     <p>We’re excited to connect! Please select a time below to book your call with Mavlers.</p>
-    
-    <!-- Replace the URL below with your actual Calendly scheduling page or embed link -->
-    <div class="calendly-inline-widget" data-url="https://calendly.com/your-calendly-username" ></div>
-    
-    <!-- Optional alternative fallback link -->
+    <div class="calendly-inline-widget" data-url="https://calendly.com/your-calendly-username"></div>
     <p style="margin-top: 20px;">
       Or&nbsp;<a href="https://calendly.com/your-calendly-username" target="_blank" style="color:#ffc107;">click here</a> to schedule on Calendly.
     </p>
