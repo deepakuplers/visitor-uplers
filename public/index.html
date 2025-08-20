@@ -27,15 +27,15 @@ btn.onclick = async () => {
   output.textContent = '';
   loading.style.display = 'block';
   try {
-    const res = await fetch('/api/identify');
-    const data = await res.json();
+    await fetch('/api/identify');
     loading.style.display = 'none';
-    output.textContent = JSON.stringify(data, null, 2);
+    output.textContent = 'Visitor info sent successfully!';
   } catch (e) {
     loading.style.display = 'none';
     output.textContent = 'Error: ' + e.message;
   }
 };
+
 </script>
 </body>
 </html>
