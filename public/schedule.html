@@ -2,56 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Schedule Your Call - Mavlers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: white;
+    body, html {
+      height: 100%;
       margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f3f7;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
       text-align: center;
-      padding: 20px;
+      color: #2a2a2a;
+      padding: 2rem;
     }
     .container {
-      max-width: 600px;
-      background: rgba(255 255 255 / 0.1);
-      padding: 40px 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      width: 100%;
+      max-width: 500px;
     }
     h1 {
-      font-size: 2.8rem;
-      margin-bottom: 24px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      font-size: 2.75rem;
+      margin-bottom: 0.5rem;
+      color: #3b82f6;
+      user-select: none;
     }
     p {
-      font-size: 1.25rem;
-      margin-bottom: 32px;
+      font-weight: 500;
+      font-size: 1.15rem;
+      color: #6b7280;
+      margin-bottom: 2.5rem;
       line-height: 1.6;
-      color: #cce4ff;
     }
     .calendly-inline-widget {
-      min-width: 320px;
+      width: 100%;
       height: 630px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(59, 130, 246, 0.2);
+      margin-bottom: 2rem;
+    }
+    a.back-btn {
+      display: inline-block;
+      background: #3b82f6;
+      color: white;
+      font-weight: 600;
+      padding: 0.8rem 2.5rem;
+      text-decoration: none;
+      border-radius: 28px;
+      font-size: 1.1rem;
+      box-shadow: 0 5px 15px rgba(59,130,246,0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+    a.back-btn:hover {
+      background: #2563eb;
+      box-shadow: 0 7px 20px rgba(37,99,235,0.7);
     }
   </style>
-  <!-- Calendly Widget -->
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Schedule Your Call</h1>
-    <p>We’re excited to connect! Please select a time below to book your call with Mavlers.</p>
-    <div class="calendly-inline-widget" data-url="https://calendly.com/your-calendly-username"></div>
-    <p style="margin-top: 20px;">
-      Or&nbsp;<a href="https://calendly.com/your-calendly-username" target="_blank" style="color:#ffc107;">click here</a> to schedule on Calendly.
+  <div class="container" role="main" aria-labelledby="sched-title sched-desc back-btn">
+    <h1 id="sched-title">Schedule Your Call</h1>
+    <p id="sched-desc">
+      We’re eager to connect! Select a convenient time below to book your meeting with Mavlers.
     </p>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/your-calendly-username"></div>
+    <a href="/" class="back-btn" id="back-btn" aria-label="Back to home page">Back to Home</a>
   </div>
 </body>
 </html>

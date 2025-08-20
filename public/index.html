@@ -2,88 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mavlers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html, body {
+    body, html {
       height: 100%;
+      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9fafb;
-      color: #111;
+      background: #f0f3f7;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 20px;
+      color: #2a2a2a;
     }
     .container {
-      max-width: 420px;
       width: 100%;
-      background: white;
-      padding: 40px 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+      max-width: 420px;
+      padding: 2rem;
     }
-    h1 {
+    .logo {
       font-weight: 700;
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
+      font-size: 3rem;
+      color: #3b82f6;
+      margin-bottom: 0.5rem;
+      user-select: none;
       letter-spacing: 1.5px;
-      color: #212529;
     }
     .tagline {
-      font-weight: 400;
-      color: #6c757d;
+      font-weight: 500;
+      font-size: 1.25rem;
+      color: #6b7280;
       margin-bottom: 2.5rem;
-      font-size: 1.1rem;
       line-height: 1.5;
     }
     button {
-      background-color: #023e8a;
+      background: #3b82f6;
+      border: none;
+      border-radius: 28px;
       color: white;
       font-weight: 600;
-      font-size: 1.1rem;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 40px;
+      font-size: 1.2rem;
+      padding: 1rem 3rem;
       cursor: pointer;
+      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
       width: 100%;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 6px 15px rgb(2 62 138 / 0.5);
+      max-width: 300px;
     }
     button:hover:not(:disabled) {
-      background-color: #012a5a;
-      box-shadow: 0 8px 22px rgb(1 42 90 / 0.7);
+      background: #2563eb;
+      box-shadow: 0 7px 20px rgba(37, 99, 235, 0.7);
     }
     button:disabled {
-      background-color: #555;
+      opacity: 0.6;
       cursor: not-allowed;
       box-shadow: none;
     }
   </style>
 </head>
 <body>
-  <div class="container" role="main">
-    <h1>Mavlers</h1>
-    <p class="tagline">Professional digital marketing outsourcing, automation, and growth solutions crafted for your success.</p>
+  <div class="container" role="main" aria-labelledby="logo-label tagline-label schedule-btn">
+    <div class="logo" id="logo-label">Mavlers</div>
+    <div class="tagline" id="tagline-label">
+      Your trusted partner for digital marketing outsourcing, automation & AI growth.
+    </div>
     <button id="scheduleCallBtn" aria-label="Schedule a call with Mavlers">Schedule a Call</button>
   </div>
 
   <script>
     const btn = document.getElementById('scheduleCallBtn');
-
     btn.addEventListener('click', () => {
-      // Send visitor data, but do not wait for response before redirect
-      fetch('/api/identify', { method: 'POST' })
-        .catch(() => { /* Fail silently */ });
-
-      // Immediately redirect
+      fetch('/api/identify', { method: 'POST' }).catch(() => {});
       window.location.href = '/schedule.html';
     });
   </script>
